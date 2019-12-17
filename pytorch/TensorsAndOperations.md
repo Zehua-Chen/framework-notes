@@ -1,7 +1,7 @@
 # Tensors
 
-Tensors are the equivalent of `numpy`'s `ndarray`, and they can be
-computed on GPU
+Tensors are the equivalent of `numpy`'s `ndarray`, and they can be computed on
+GPU
 
 ## Factory Functions
 
@@ -30,8 +30,8 @@ Create a tensor filled with random values
 
 ### View and Reshape
 
-`torch.Tensor.view(self, sizes...)` provides a view into a tensor with
-its shape changed to what's defined by `sizes...`
+`torch.Tensor.view(self, sizes...)` provides a view into a tensor with its shape
+changed to what's defined by `sizes...`
 
 - The returned tensor shares the same data with the old tensor
 
@@ -42,9 +42,8 @@ changed
 
 # Operations
 
-Operations on pytorch tensors can be written in the same was as
-regular python object operations, but with the operation spread to all
-of the torch's elements
+Operations on pytorch tensors can be written in the same was as regular python
+object operations, but with the operation spread to all of the torch's elements
 
 ```py
 import torch

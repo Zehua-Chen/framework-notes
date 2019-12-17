@@ -19,7 +19,7 @@ Create a data loader from a specified `dataset`
 
 `dataset` don't have to be subclass of `torch.utils.data.Dataset`:
 
-- `numpy.ndarray`'s first dimension would be used to index, and the rest of
-  the dimensions will be put into a single tensor
-- `list`'s first dimension would be used to index, and each of the
-  dimension will be put into a tensor
+- `numpy.ndarray`'s first dimension would be used to index, and the rest of the
+  dimensions will be put into a single tensor
+- `list`'s first dimension would be used to index, and each of the dimension
+  will be put into a tensor

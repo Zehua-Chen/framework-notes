@@ -7,4 +7,3 @@ services.AddConnections();
 ```
 
 # Connection Handlers
-

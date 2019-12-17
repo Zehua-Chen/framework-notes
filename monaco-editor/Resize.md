@@ -1,5 +1,5 @@
 ```ts
-automaticLayout: boolean
+automaticLayout: boolean;
 ```
 
 Set this to true to have the monaco editor to resize with its parent container.
