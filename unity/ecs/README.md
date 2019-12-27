@@ -5,6 +5,41 @@
 - **Entities**: "game objects" on which components are associated with
 - **World**: a container for a set of ECS
 
+## Systems
+
+Systems can be created using
+
+```cs
+T system = World.GetOrCreateSystem<T>();
+```
+
+in an existing system
+
+## System Gropus
+
+There are three system groups, by default
+
+- `InitializationSystemGroup`
+- `SimulationSystemGroup`
+- `PresentationSystemGroup`
+
+All systems will be put into the simulation system group by default
+
+Each system group have entity command buffer systems that **play back** the
+entity command buffers.
+
+- Entity command buffers can be retrieved from the entity command buffer systems
+- There is an entity command buffer systems at the beginning and at end of each
+  system group
+- More entity command buffer systems can be created by the user
+- Make sure use `AddJobHandleForProducer` method to inform a entity command
+  buffer that the command buffer should not be run until some job has been
+  completed
+
+# Topics
+
+- [Entity Interactions](EntityInteractions.md)
+
 # Bugs
 
 - Hybrid renderer does not seem to work in production builds
