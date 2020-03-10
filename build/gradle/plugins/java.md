@@ -1,6 +1,4 @@
-# Java
-
-To support java, apply plugins using
+# `java` Plugin
 
 ```gradle
 plugins {
@@ -8,11 +6,12 @@ plugins {
 }
 ```
 
-The java plugin addes the following tasks
+The java adds the ability to compile and build java projects; the following
+tasks are added specifically
 
-- `Jar`
+- `jar`
 
-## `Jar`
+## `jar`
 
 ```gradle
 jar {
