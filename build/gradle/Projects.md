@@ -6,6 +6,13 @@ Subprojects must be included in the `settings.gradle` file
 include 'console', `other`
 ```
 
+In case the subproject lives in a deeper level
+
+```gradle
+include ":project"
+project(":project").projectDir = new File("xxx");
+```
+
 ## Root Level Configurations
 
 In the root `build.gradle`
