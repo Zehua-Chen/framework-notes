@@ -1,4 +1,4 @@
-# Projects
+# Subprojects
 
 Subprojects must be included in the `settings.gradle` file
 
@@ -26,6 +26,22 @@ To add configuration to an existing project
 
 ```gradle
 project(":<name>") {
+  // configurations
+}
+```
+
+To add shared configurations to all projects
+
+```gradle
+allprojects {
+  // configurations
+}
+```
+
+To add shared configurations to all subprojects
+
+```
+subprojects {
   // configurations
 }
 ```
