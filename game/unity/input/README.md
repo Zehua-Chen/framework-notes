@@ -4,19 +4,18 @@
 
 ### Action Type
 
-- Value: monitor changes to controls bound to the action, but only take the most
-  activated one driving the action and only report values of that control
+- **Value**: monitor changes to controls bound to the action, but only take the
+  most activated one driving the action and only report values of that control
   - When enabled initially, perform state check of all bound controls and report
     values of the activated controls
-- Button: similar to `Value`, but only bound to `ButtonControl`, does not
+- **Button**: similar to `Value`, but only bound to `ButtonControl`, does not
   perform initial check
-- Pass through: similar do `Value`, but does report all values of all controls
-  bound to an action
+- **Pass through**: similar do `Value`, but does report all values of all
+  controls bound to an action
 
 ## Bindings
 
-- **Bindings** trigger actions by
-  - Feeding the action with values
+- **Bindings** trigger actions by feeding the action with values
 - **Path** The hardware event that make the make the binding fire
 
 ### Binding Composite
