@@ -51,8 +51,10 @@ subprojects {
 ```gradle
 project(":<name>") {
   dependencies {
-    api `project`
-    implementation `project`
+    api 'external'
+    api project('project')
+    implementation 'external'
+    implementation project('project')
   }
 }
 ```
