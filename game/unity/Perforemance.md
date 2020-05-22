@@ -4,6 +4,8 @@
   - Minimise the calls or use non-alloc versions
   - Some APIS accepts a `List<T>` parameter which is used to place the return
     values
+- Cache the result of `this.transform`, each call would invoke use the
+  `GetComponent` method
 
 # General Data Structure Issues
 
