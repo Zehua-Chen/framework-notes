@@ -7,5 +7,5 @@ Wheels collider can be used to simulate wheels
 ## Properties
 
 - `Spring`, `Damper`: controls the bounciness of the wheels
-- `motorTorque`: how fast the "motor" can drive the wheel. 0 means the wheel
-  is fixed
+- `motorTorque`: how fast the "motor" can drive the wheel. 0 means the wheel is
+  fixed

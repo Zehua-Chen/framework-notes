@@ -4,8 +4,7 @@
 
 - Many APIS are recursive over child game objects
   - Set `withChildren` parameter to `false` if possible
-  - Maybe cache a list of particle components and call uses the APIs one by
-    one
+  - Maybe cache a list of particle components and call uses the APIs one by one
 
 # VFX Graph
 
