@@ -17,7 +17,7 @@ module.exports = {
     // to disk
     contentBase: "dist/",
     // port
-    port: 3000
-  }
+    port: 3000,
+  },
 };
 ```

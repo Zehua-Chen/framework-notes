@@ -4,7 +4,7 @@
 
 ```js
 module.exports = {
-  mode: "development"
+  mode: "development",
 };
 ```
 
@@ -18,8 +18,8 @@ By default, webpack uses production mode.
 ```js
 module.exports = {
   entry: {
-    chunk: "entry file"
-  }
+    chunk: "entry file",
+  },
 };
 ```
 
@@ -34,7 +34,7 @@ module.exports = {
     // [name] is the names of chunks
     filename: "[name].xxx",
     // where to put the outputs
-    path: "output dist"
-  }
+    path: "output dist",
+  },
 };
 ```
