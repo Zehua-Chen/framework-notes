@@ -7,7 +7,11 @@ objects.
 
 # User Initiated Editing
 
-While handing user-initiated changes like re-ordering table, notifications from
-fetched results controller needs to be ignored. To do this, use a boolean flag
-which would be set to true at the beginning of user initiated changes, and set
-to false in `controllerDidChangeContent`
+Fetched results controller is designed to handle model layer events in (MVC),
+therefore, its notifications needs to be disabled for user initiated events
+like:
+
+- Reordering
+- Delete
+
+User initiated inserts typically do not cause problems
