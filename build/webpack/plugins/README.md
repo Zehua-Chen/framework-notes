@@ -18,7 +18,8 @@
    - The AST would be traversed to find imports, from which new modules would be
      created using the same process (2-4)
    - Repeat until all modules are included
-5. Template produce the code in bundles
+5. Template produce the code, add it to the compiler so that it would be present
+   in bundles
 
 # API
 
