@@ -1,5 +1,7 @@
 # Entity Framework Core
 
+Abbreviated as `ef`
+
 ## Concepts
 
 - **Migration**: migrations are ways to apply changes between two sets of model

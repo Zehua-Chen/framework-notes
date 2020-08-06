@@ -1,4 +1,4 @@
-# Configuration
+# Basic Settings
 
 ## Mode
 
@@ -34,7 +34,11 @@ module.exports = {
     // [name] is the names of chunks
     filename: "[name].xxx",
     // where to put the outputs
-    path: "output dist",
+    path: "path",
   },
 };
 ```
+
+# Other Settings
+
+- [Module (files)](./Modules.md)
