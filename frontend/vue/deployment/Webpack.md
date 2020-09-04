@@ -1,6 +1,4 @@
-# Single Page Application
-
-## Webpack From Scratch
+# Webpack
 
 By default, `vue` installed from NPM does not have template compiler builtin;
 **this means that vue templates must not be used outside of `.vue` files (whose
@@ -22,3 +20,16 @@ let v = new Vue({
 - Use other loaders to process files created from vue component files
   - Either use `MiniCssExtractPlugin.loader` or `style-loader` as the last stage
     of style sheets loading; **dont use `vue-style-loader`**
+
+## TypeScript
+
+- First loader must add `.ts` extension to `.vue` files; only `ts-loader`
+  provides this out of the box
+  ```ts
+  {
+    loader: "ts-loader";
+    options: {
+      appendTsSuffixTo: [/\.vue$/];
+    }
+  }
+  ```
