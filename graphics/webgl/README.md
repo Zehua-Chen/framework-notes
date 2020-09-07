@@ -38,14 +38,25 @@ gl.disable(gl.DEPTH_TEST);
 
 Keep in mind that `z=-1` will cover `z=1`
 
+Before rendering begin, reset depth buffer
+
+```ts
+gl.clear(gl.DEPTH_BUFFER_BIT);
+```
+
 ### Background Color
 
-Background color can be set using
+Background color (aka. clear color) can be configured using; **note that this
+does not set background color**
 
 ```ts
 // set a color preset
 gl.clearColor(...);
+```
 
+Before rendering begin, colors are cleared using
+
+```ts
 // revert to color preset
 // this actually set the background color
 gl.clear(gl.COLOR_BUFFER_BIT);
