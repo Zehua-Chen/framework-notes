@@ -4,6 +4,7 @@
 2. Create shader, vertex data
 3. Configure Rendering
 4. Rendering
+5. Request next frame
 
 ## Obtaining GL Context
 
@@ -35,8 +36,6 @@ Depth test is hidden surface removal; can be toggled using
 gl.enable(gl.DEPTH_TEST);
 gl.disable(gl.DEPTH_TEST);
 ```
-
-Keep in mind that `z=-1` will cover `z=1`
 
 Before rendering begin, reset depth buffer
 
@@ -83,9 +82,14 @@ gl.drawElements(gl.TRIANGLES, 3, gl.UNSIGNED_SHORT, 0);
 - Vertex data are taken from `gl.ARRAY_DATA`
 - Indices data are taken from `gl.ELEMENT_ARRAY_BUFFER`
 
-### Clip Space
+## Request Next Frame
 
-- `x`: `[-1, 1]`
-- `y`: `[-1, 1]`
-- `z`: `[-1, 1]`
-  - `-1` is the closest to the user
+```ts
+requestAnimationFrame(draw);
+```
+
+Request animtion frame registers a callback to the browser. The callback would
+be used produce the next frame
+
+The callback would be call with a number as a parameter that represent **the
+current timestamp in milliseconds**
