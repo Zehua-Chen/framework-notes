@@ -6,6 +6,12 @@ dependencies {
   api project('project')
   implementation 'external'
   implementation project('project')
+  compileOnly 'external'
+  compileOnly project('project')
+  runtimeOnly 'external'
+  runtimeOnly project('project')
+  testX 'external'
+  testX project('project')
 }
 ```
 
@@ -13,6 +19,9 @@ dependencies {
   also depend on the api dependency
 - If a project uses an `implementation` dependency, then consumers of the
   project would not depend on the implementation dependency
+- testX are only used for test builds
+  - `testCompileOnly` needs to be added for every `compileOnly` otherwise there
+    would be compiler errors (intellij annotations)
 
 ## External Dependencies
 
