@@ -1,7 +1,7 @@
 # Develpment Server
 
-The package `webpack-dev-server` provides command line tool `webpack-dev-server`
-to start a webpack development server
+The package `webpack-dev-server` provides necessary dependencies for
+`webpack serve` command, which runs the webpack development server
 
 ## Options
 
