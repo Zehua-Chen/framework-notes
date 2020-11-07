@@ -19,6 +19,33 @@ Created using `createPaginationContainer`
 - `component`: the component that is implementing pagination
 - `fragmentSpec`: a map between props and queries;
   - Each prop must be passed to the "component" from the parents component
+  - One of the fragments must contain a `@connection` annotation marked on the
+    connections;
+    ```ts
+    {
+      data: graphql`
+        fragment repositoriesList_data on User
+        @argumentDefinitions(
+          count: { type: "Int" }
+          cursor: { type: "String" }
+        ) {
+          repositories(privacy: PUBLIC, first: $count, after: $cursor)
+            @connection(key: "data_repositories") {
+            edges {
+              node {
+                name
+                owner {
+                  login
+                }
+                description
+              }
+            }
+          }
+        }
+      `;
+    }
+    ```
+    Here `repositories` is of type `RepositoryConnection`
 - `connectionConfig`:
   - `direction`: direction
   - `getConnectionFromProps`: given the props (including those from
