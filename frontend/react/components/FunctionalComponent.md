@@ -1,9 +1,31 @@
-# Functional Components
+# Hooks
 
-Due to the stateless nature of functional components, hooks (which preserve
-states) should always be prefered
+Some hooks with functions as parameters, like `useEffect(fn, dependencies)` take
+a list of values as its dependencies and would only rerun the function when the
+dependencies has changed. **Passing an empty list would cause the function to be
+only run once**
+
+```ts
+function Foo(): JSX.Element {
+  useEffect(() => {
+    // componentDidMount
+  }, []);
+  return <div></div>;
+}
+```
+
+## Refs
 
 - **ref**: `React.useRef(initial)`
+
+## Memoization
+
+## `useCallback`
+
+`useCallback` uses `useMemo` to build a memoized callback; useful for
+
+- Event handlers
+- Avoid unecsssary renders in memoized children components
 
 # Default Props
 
