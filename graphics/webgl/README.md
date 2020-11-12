@@ -72,14 +72,13 @@ gl.viewport(x, y, width, height);
 ## Rendering
 
 ```ts
-gl.bindBuffer(gl.ARRAY_BUFFER, vertices);
 gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indices);
 gl.drawElements(gl.TRIANGLES, 3, gl.UNSIGNED_SHORT, 0);
 ```
 
 `gl.drawElements` issues the draw call
 
-- Vertex data are taken from `gl.ARRAY_DATA`
+- Vertex data should be passed using shaders
 - Indices data are taken from `gl.ELEMENT_ARRAY_BUFFER`
 
 ## Request Next Frame
