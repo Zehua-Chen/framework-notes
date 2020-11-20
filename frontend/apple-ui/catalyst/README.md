@@ -1,0 +1,20 @@
+# Build Settings
+
+Xcode has two build mode for catalyst apps
+
+- Scale Interface to Match iPad
+- Optimize Interface for Mac
+
+## Differences
+
+- "optimized" would not change the scaling of interface, but "scaled" will scale
+  down the interface
+- "optimized" would use macOS system controls in place of `UIKit` controls
+- "optimized" would not adjust font size, unless the size is hard coded, but
+  "scaled" will scale down the text
+- "optimized" would use system spacing in auto-layout
+
+# Installed
+
+"Installed" property in storyboard builder contains a trait called "Idiom" that
+allow you to remove some views for "Mac" and "iPad"
