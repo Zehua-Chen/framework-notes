@@ -1,11 +1,13 @@
 # Build Settings
 
+## Optimize Interface for Mac
+
 Xcode has two build mode for catalyst apps
 
 - Scale Interface to Match iPad
 - Optimize Interface for Mac
 
-## Differences
+### Differences
 
 - "optimized" would not change the scaling of interface, but "scaled" will scale
   down the interface
@@ -14,7 +16,12 @@ Xcode has two build mode for catalyst apps
   "scaled" will scale down the text
 - "optimized" would use system spacing in auto-layout
 
-# Installed
+## Preventing the Application From Quitting after Window Closes
+
+Only UIKit applications that **supports multiple windows** will be **kept
+alive** on macOS after the last window has closed.
+
+# "Installed"
 
 "Installed" property in storyboard builder contains a trait called "Idiom" that
 allow you to remove some views for "Mac" and "iPad"
