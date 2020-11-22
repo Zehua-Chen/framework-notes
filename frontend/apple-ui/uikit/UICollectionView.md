@@ -9,6 +9,30 @@ let layout = UICollectionViewCompositionalLayout.list(using: configuration)
 
 - If a list layout is used, `UICollectionViewListCell` should be as the cell
 
+## Swipe Actions
+
+```swift
+configuration.trailingSwipeActionsConfigurationProvider = { indexPath in
+  let delete = UIContextualAction(style: .destructive, title: "Delete") {
+    _, _, complete in
+    let course = self.dataSource.itemIdentifier(for: indexPath)!
+    var snapshot = self.dataSource.snapshot()
+    snapshot.deleteItems([course])
+
+    self.dataSource.apply(snapshot)
+    complete(true)
+  }
+
+  return UISwipeActionsConfiguration(actions: [delete])
+}
+```
+
+`UICollectionLayoutListConfiguration` contains the following callbacks for
+handlign swipe actions
+
+- `trailingSwipeActionsConfigurationProvider`
+- `leadingSwipeActionsConfigurationProvider`
+
 # Cells
 
 ## Configuring Cells
@@ -28,6 +52,19 @@ Cell registrations are done by instantiating a
 obtain cells
 
 - The callback is used to update cell's contents
+
+### Accessories
+
+Accessories can be added using
+
+```swift
+cell.accessories = [
+  .disclosureIndicator(),
+  .checkmark()
+]
+```
+
+The cell would automaticall sort the accessories' orders
 
 ## Obtaining Cells
 
