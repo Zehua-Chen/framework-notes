@@ -1,4 +1,4 @@
-# Multiple Windows
+# Enabling Multiple Windows
 
 To enable multiple windows
 
@@ -10,3 +10,10 @@ To enable multiple windows
   1. Expand "Information Property List"
   2. Expand "Application Scene Manifest"
   3. Set "Enable Multiple Windows" to "YES"
+
+# Design
+
+- Users should be able to do everything from one window
+- Users can bring up more windows if they want
+- Users expect document-based, tab-based and some drag-and-drop apps to have
+  multiple windows
