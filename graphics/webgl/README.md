@@ -30,7 +30,7 @@ const gl = canvas.getContext("webgl");
 
 ### Depth Test
 
-Depth test is hidden surface removal; can be toggled using
+Depth test performs hidden surface removal; can be toggled using
 
 ```ts
 gl.enable(gl.DEPTH_TEST);
@@ -42,6 +42,18 @@ Before rendering begin, reset depth buffer
 ```ts
 gl.clear(gl.DEPTH_BUFFER_BIT);
 ```
+
+- Depth buffer default value can be set using
+  ```ts
+  gl.clearDepth(depth);
+  ```
+  Default value is `1`
+- Depth function can be configured using
+  ```ts
+  gl.depthFunc(func);
+  ```
+  Default value is `gl.LESS`. This means that with default values, vertices with
+  `z=1` would not be drawn
 
 ### Background Color
 
