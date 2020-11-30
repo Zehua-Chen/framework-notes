@@ -108,4 +108,4 @@ current timestamp in milliseconds**
 
 # Resources
 
-- [WebGL Fundamentals](https://webglfundamentals.org/webgl/lessons/webgl-indexed-vertices.html)
+- [WebGL Fundamentals](https://webglfundamentals.org)
