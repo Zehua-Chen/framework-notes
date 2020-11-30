@@ -91,7 +91,8 @@ gl.drawElements(gl.TRIANGLES, 3, gl.UNSIGNED_SHORT, 0);
 `gl.drawElements` issues the draw call
 
 - Vertex data should be passed using shaders
-- Indices data are taken from `gl.ELEMENT_ARRAY_BUFFER`
+- Indices data are taken from `gl.ELEMENT_ARRAY_BUFFER`. WebGL would use the
+  indices and the vertices processed by the shader program to form shapes
 
 ## Request Next Frame
 
@@ -104,3 +105,7 @@ be used produce the next frame
 
 The callback would be call with a number as a parameter that represent **the
 current timestamp in milliseconds**
+
+# Resources
+
+- [WebGL Fundamentals](https://webglfundamentals.org/webgl/lessons/webgl-indexed-vertices.html)
