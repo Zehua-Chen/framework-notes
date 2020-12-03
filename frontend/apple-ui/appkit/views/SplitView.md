@@ -27,3 +27,9 @@ self.splitViewItems[0].isCollapsed = true
 // With animation
 self.splitViewItems[0].animator().isCollapsed = true
 ```
+
+### Sidebar
+
+#### Table View
+
+Table view in sidebar should have `.sourceList` style
