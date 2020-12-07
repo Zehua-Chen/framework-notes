@@ -25,3 +25,8 @@ alive** on macOS after the last window has closed.
 
 "Installed" property in storyboard builder contains a trait called "Idiom" that
 allow you to remove some views for "Mac" and "iPad"
+
+## Architecture
+
+- Catalyst projects would be automatically built to contain code for both intel
+  and arm macs
