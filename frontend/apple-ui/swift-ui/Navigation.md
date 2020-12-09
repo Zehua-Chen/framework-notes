@@ -1,87 +1,71 @@
-# macOS
-
-- Starts with a `NavigationView` as root
-- `NavigationView` contains two children
-  - A master
-  - A detail
-- The **master** view must contain a `List` element in its children. There are
-  two approaches
-  - Using `NavigationLink`
-  - Not using `NavigationLink`
-- The **detail** view needs to provide a height and width (or minimum height and
-  and width), otherwise NavigationView would pick a height and a width.
+# Overview
 
 ```swift
-struct ContentView: View {
+struct TodoDetail: View {
+  var todo: String
+
   var body: some View {
     NavigationView {
-      VStack {
-        Filter()
-        EmailList()
-      }
-
-      EmailContent()
+      NavigationLink("A", destination: Text("Child A"))
+      NavigationLink("B", destination: Text("Child B"))
     }
   }
 }
 ```
 
-## Master View
+Navigation involves two components `NavigationView` and `NavigationLink`
 
-### No Navigation Link
+- `NavigationView` must be the parent of `NavigationLink`
+- Works on all platforms their navigation styles
 
-- `List(selection:)` would enable selecting rows
-  - Use `ForEach` if content is dynamically generated
+# Navigation Styles
+
+- `StackNavigationViewStyle`: compact width devices (ex. iPhone)
+- `DoubleColumnNavigationViewStyle`: wide width devices (ex. Mac)
+
+`NavigationView` would pick what's best for the platform by default
+
+# Programatic Control
+
+## Presenting Views
 
 ```swift
 struct ContentView: View {
-  @State selection: Int? = 0
+  @State
+  var todos: [String] = ["Todo 1", "Todo 2"]
+
+  @State
+  var selection: String? = nil
 
   var body: some View {
     NavigationView {
-      VStack {
-        Filter()
-
-        List(selection: $selection) {
-          ForEach(emails) { email in
-            EmailRow(email)
+      List {
+        ForEach(todos, id: \.self) { todo in
+          NavigationLink(
+            todo, destination: TodoDetail(todo: todo), tag: todo, selection: $selection)
+        }
+        .onDelete { path in
+          withAnimation {
+            todos.remove(atOffsets: path)
           }
         }
       }
-
-      EmailContent()
+      .listStyle(SidebarListStyle())
+      .navigationTitle("Todos")
     }
   }
 }
 ```
 
-### Navigation Link
+`NavigationLink` offers two sets of parameters that enable programmatic control of
+navigation
 
-- Detail view is optional, since NavigationLink provides one
-  - If a detail view on the root level is still available, it would be used when
-    nothing is selected
-- Don't have to use `List(selection:)` to enable selection
+- `tag` and `selection`
+- `isActive`
 
-```swift
-struct ContentView: View {
-  var body: some View {
-    NavigationView {
-      VStack {
-        Filter()
 
-        List {
-          ForEach(emails) {
-            NavigationLink(EmailContent(), label: { Text("Email") })
-          }
-        }
-      }
+## Dismissing Views
 
-      DefaultEmailContent()
-    }
-  }
-}
-```
+`PresentationMode.dismiss(self:)` eanbles the programmtic dismiss of a view
 
-# iOS
-
-TODO:
+- Accessed via `@Environment(\.presentationMode)`
