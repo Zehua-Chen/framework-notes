@@ -25,6 +25,26 @@ Navigation involves two components `NavigationView` and `NavigationLink`
 
 `NavigationView` would pick what's best for the platform by default
 
+# Three-Column Layout
+
+To implement a three-column layout, simply neste a navigation view inside
+another navigation view
+
+```swift
+struct TodoDetail: View {
+  var todo: String
+
+  var body: some View {
+    NavigationView {
+      NavigationView {
+        NavigationLink("A", destination: Text("Child A"))
+      }
+      NavigationLink("B", destination: Text("Child B"))
+    }
+  }
+}
+```
+
 # Programatic Control
 
 ## Presenting Views
@@ -57,12 +77,11 @@ struct ContentView: View {
 }
 ```
 
-`NavigationLink` offers two sets of parameters that enable programmatic control of
-navigation
+`NavigationLink` offers two sets of parameters that enable programmatic control
+of navigation
 
 - `tag` and `selection`
 - `isActive`
-
 
 ## Dismissing Views
 
