@@ -4,6 +4,8 @@
 
 - `image`: icon image
 - `label`: a string under the icon
+- `isNavigational`: a navigational item is placed before everything else,
+  including the window title (ex. Finder)
 
 ## Interactions
 

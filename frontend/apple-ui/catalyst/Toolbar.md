@@ -19,15 +19,14 @@ class SceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else { return }
 
     #if targetEnvironment(macCatalyst)
-    self.toolbar = NSToolbar()
-    self.toolbarDelegate = ToolbarDelegate()
-    self.toolbar?.delegate = self.toolbarDelegate
+    toolbar = NSToolbar()
+    toolbarDelegate = ToolbarDelegate()
+    toolbar?.delegate = toolbarDelegate
 
     if let titlebar = windowScene.titlebar {
-      titlebar.titleVisibility = .hidden
       titlebar.toolbar = self.toolbar
-      titlebar.toolbarStyle = .automatic
     }
+    #endif
   }
 }
 ```
