@@ -30,3 +30,14 @@ class SceneDelegate {
   }
 }
 ```
+
+# Toolbar Items
+
+## Tracking Separator Items
+
+- `.primarySidebarTrackingSeparatorItemIdentifier`
+- `.supplementarySidebarTrackingSeparatorItemIdentifier`
+
+provides toolbar items that display a separator between views of a
+`UISplitViewController` and can make sure toolbar items stay in their designated
+sections
