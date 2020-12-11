@@ -3,9 +3,8 @@
 ## Split Items
 
 - **Side Bar**: a side bar with translucent background
-  - From Big Sur, if the window has "full size content view", then
-  - The sidebar would be of full height, i.e. spans from top to bottom of the
-    window
+  - From Big Sur, if the window has "full size content view", then the sidebar
+    would be of full height, i.e. spans from top to bottom of the window
   - The sidebar would have a transparent toolbar
 - **Content List**
 - **Others**
