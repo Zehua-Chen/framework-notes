@@ -1,12 +1,14 @@
 # Overview
 
+## Workflow
+
 1. Get access to a device
 2. Create a command queue from the device
 3. Make command buffers from the command queue
 4. Use command encoder to edit command buffers; end encoding when you are done
 5. Commit command buffers for rendering
 
-# Device
+## Device
 
 ```swift
 protocol MTLDevice {}
@@ -22,7 +24,7 @@ The abstraction over GPU, serving as the primary interface for Metal
 - Metal objects created from one device can only be used with that device; To
   create a system default device, use `MTLCreateSystemDefaultDevice()`;
 
-# Command Queue
+## Command Queue
 
 ```swift
 protocol MTLCommandQueue {}
@@ -41,7 +43,7 @@ protocol MTLCommandQueue {}
     `makeCommandBufferWithUnretainedReferences()` methods; Command buffers needs
     to be alive until the command buffer have finished executing;
 
-# Command Buffers
+## Command Buffers
 
 ```swift
 protocol MTLCommandBuffer {}
@@ -59,7 +61,7 @@ protocol MTLCommandBuffer {}
   - Call `commit()` method, which tells the command queue that a command is
     ready to be handed over to the GPU;
 
-## Command Buffer Encoder
+### Command Buffer Encoder
 
 ```swift
 protocol MTLCommandEncoder {}
@@ -77,7 +79,7 @@ buffer
 - Once your are finished, call `endEncoding()` method to end encoding. To append
   more commands, create another command encoder;
 
-### Different Encoders
+#### Different Encoders
 
 Different encoders are available for different types of tasks
 
@@ -86,9 +88,15 @@ Different encoders are available for different types of tasks
 - Memory Management: `MTLBlitCommandEncoder`
 - Parallel Render: `MTLParallelRenderCommandEncoder`
 
-### Debugging
+## Debugging
 
 For debugging, call `insertDebugSignpost(_:)`, `pushDebugGroup(_:)`, and
 `popDebugGroup()` to insert debug strings, push and pop string labels used to
 identify group of encoded commands. These strings are used by Xcode to provide
 more insights into the rendering process;
+
+
+# Support Libraries
+
+- [MetalKit](MetalKit.md)
+- [Model IO](modelio/README.md)
