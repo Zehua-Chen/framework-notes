@@ -18,20 +18,28 @@ distribute the applications; it adds the following tasks
 
 To create a runnable distribution, the main class must be provided
 
-```gradle
+```groovy
 application {
-  mainClassName = "Program"
+  mainClass.set("Program")
 }
 ```
 
-## Manifest Not Needed!
+### Manifest Not Needed!
 
 Note that the followings are not needed for creating runnable distributions
 
-```gradle
+```groovy
 jar {
   manifest {
     attributes "Main-Class": "Program"
   }
+}
+```
+
+## Default JVM Args
+
+```groovy
+application {
+  applicationDefaultJvmArgs = ["-enableassertions"]
 }
 ```
