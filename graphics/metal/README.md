@@ -34,8 +34,8 @@ protocol MTLCommandQueue {}
   a metal device to execute
 - Command queues are thread-safe and allow multiple command buffers to be
   encoded simultaneously
-- Typically you create command queues at the beginning of the lifetime of your
-  app and use them throughout the app
+- **Typically you create command queues at the beginning of the lifetime of your
+  app and use them throughout the app**
 - Command queues are created using the metal device
   - To create a command queue, use `makeCommandQueue()` or
     `makeCommandQueue(maxCommandBufferCount:)` method on `MTLDevice`
@@ -95,6 +95,10 @@ For debugging, call `insertDebugSignpost(_:)`, `pushDebugGroup(_:)`, and
 identify group of encoded commands. These strings are used by Xcode to provide
 more insights into the rendering process;
 
+# Coordinate System
+
+- `x, y`: `[-1, 1]`
+- `z`: `[0, 1]`; `0` is closest to the user
 
 # Support Libraries
 
