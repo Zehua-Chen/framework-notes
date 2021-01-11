@@ -38,3 +38,7 @@ set_target_properties(Application PROPERTIES
 
 Setting `RESOURCES` property of an bundle would mark files of a bundle as
 resources, therefore putting them into the `Resources` folder.
+
+## Code Signing
+
+Code signing should be done separately using `codesign` command line tool.
