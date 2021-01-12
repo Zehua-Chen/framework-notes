@@ -97,6 +97,8 @@ more insights into the rendering process;
 
 # Coordinate System
 
+Metal use **left handed** coordiante system
+
 - `x, y`: `[-1, 1]`
 - `z`: `[0, 1]`; `0` is closest to the user
 
