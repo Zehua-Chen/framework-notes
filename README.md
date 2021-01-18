@@ -1,3 +1,9 @@
+# Checklist for New Topics
+
+- [ ] Features
+- [ ] Modularization
+- [ ] Testing
+
 # Naming Convention
 
 ## File
