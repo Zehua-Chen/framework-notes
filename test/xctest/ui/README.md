@@ -19,7 +19,7 @@ A proxy to the tested application
 - Launch a test application creates a new process and terminate any existing
   process
 
-## `XCUIElement`:
+## `XCUIElement`
 
 A proxy for elements in the application
 
