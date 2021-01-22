@@ -38,3 +38,9 @@ Scenes are managed using
 
 - Requested from `UISceneDelegate`
 - Accessible via `UISceneSession.stateRestorationActivity`
+
+# Resources
+
+## Animations
+
+- [Advanced Animations with UIKit](https://developer.apple.com/videos/play/wwdc2017/230/)
