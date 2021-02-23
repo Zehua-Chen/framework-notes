@@ -17,3 +17,7 @@ IDEs.
 - `PRIVATE` will keep the target's files to itself
 - `target_sources` can also add source files, in addition to using
   `add_executable(target, sources)` and `add_library(target, sources)`
+
+## Imported Target
+
+[TODO:](https://stackoverflow.com/questions/33165270/force-cmake-to-use-the-full-library-path)
