@@ -18,3 +18,10 @@ To run the test
 ```
 ninja test
 ```
+
+## Google Test
+
+- `gtest_add_tests` scan source codes for tests
+  - **Trigger cmake regenerate every time file changes**
+- `gtest_discover_tests` query compiled executable for tests
+  - **Does not trigger cmake regenerate every time file changes**
