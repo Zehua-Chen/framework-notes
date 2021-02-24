@@ -9,6 +9,7 @@
 ```
 
 - `name` and `version-string` are required properties
+- [Versioning](https://devblogs.microsoft.com/cppblog/take-control-of-your-vcpkg-dependencies-with-versioning-support/)
 
 ## CMake
 
