@@ -1,4 +1,10 @@
-# Targets
+# Types of Targets
+
+## Imported Target
+
+[TODO:](https://stackoverflow.com/questions/33165270/force-cmake-to-use-the-full-library-path)
+
+# Targets Properties
 
 ## Target Sources
 
@@ -18,6 +24,15 @@ IDEs.
 - `target_sources` can also add source files, in addition to using
   `add_executable(target, sources)` and `add_library(target, sources)`
 
-## Imported Target
+## Output Name
 
-[TODO:](https://stackoverflow.com/questions/33165270/force-cmake-to-use-the-full-library-path)
+```cmake
+set_target_properties(
+  foo
+  PROPERTIES
+    OUTPUT_NAME Foo)
+```
+
+Output name of a target controls the file name of the product of a target
+
+- Library's output names will be prefixed by `lib` on posix platforms
