@@ -18,7 +18,7 @@ Navigation involves two components `NavigationView` and `NavigationLink`
 - `NavigationView` must be the parent of `NavigationLink`
 - Works on all platforms their navigation styles
 
-# Navigation Styles
+## Navigation Styles
 
 - `StackNavigationViewStyle`: compact width devices (ex. iPhone)
 - `DoubleColumnNavigationViewStyle`: wide width devices (ex. Mac)
@@ -27,19 +27,58 @@ Navigation involves two components `NavigationView` and `NavigationLink`
 
 # Three-Column Layout
 
-To implement a three-column layout, simply neste a navigation view inside
-another navigation view
+To implement a three-column layout
+
+- Use one root `NavigationView` with three children
+  - One will be the first column, the sidebar
+  - The other two will be place holders for the second and the third column;
+    **If the placeholders are not present**, then the second column will appear
+    as disabled
+- In the first column, set up `NavigationLink` that lead to the second column
+- In the second column, set up `NavigationLink` that lead to the third column
 
 ```swift
-struct TodoDetail: View {
-  var todo: String
+import SwiftUI
 
+struct ThirdColumn: View {
+  var body: some View {
+    Text("Third Column Content")
+      .toolbar {
+        Button("Share") {}
+        Button("Delete") {}
+      }
+  }
+}
+
+struct SecondColumn: View {
+  var body: some View {
+    List {
+      NavigationLink("Third", destination: ThirdColumn())
+      NavigationLink("Third", destination: ThirdColumn())
+    }
+    .navigationTitle(Text("Second Column"))
+    .toolbar {
+      Button("New") {}
+    }
+  }
+}
+
+struct FirstColumn: View {
+  var body: some View {
+    List {
+      NavigationLink("Second", destination: SecondColumn())
+      NavigationLink("Second", destination: SecondColumn())
+    }
+    .listStyle(SidebarListStyle())
+  }
+}
+
+struct ContentView: View {
   var body: some View {
     NavigationView {
-      NavigationView {
-        NavigationLink("A", destination: Text("Child A"))
-      }
-      NavigationLink("B", destination: Text("Child B"))
+      FirstColumn()
+      Text("Empty Second")
+      Text("Empty Third")
     }
   }
 }
@@ -88,3 +127,8 @@ of navigation
 `PresentationMode.dismiss(self:)` eanbles the programmtic dismiss of a view
 
 - Accessed via `@Environment(\.presentationMode)`
+
+# Resources
+
+- [Triple Trouble](https://kean.blog/post/triple-trouble): how to do three
+  column layout

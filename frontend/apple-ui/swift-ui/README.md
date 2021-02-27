@@ -60,3 +60,7 @@ initialize states
     }
   }
   ```
+
+# Resources
+
+- [AppKit is Done](https://kean.blog/post/appkit-is-done)
